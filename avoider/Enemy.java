@@ -14,22 +14,18 @@ public class Enemy extends Actor
      */
     public void act() 
     {
-        setLocation( getX(), getY() + 1);
+        setLocation( getX(), getY() +1);
         checkRemove();
-    }    
+    }
     
     private void checkRemove()
     {
         World w = getWorld();
-        if (getY() > w.getHeight() + 30)    {
+        if(getY() > w.getHeight() + 30)
+        {
             w.removeObject(this);
+            //despues de eliminar al actor ya no puedes usarlo
+            //porque este ya no existe en el mundo
         }
     }
 }
-
-
-
-
-
-
-
